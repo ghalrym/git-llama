@@ -12,7 +12,10 @@ class GitLlama:
     FORMAT_DIR = os.path.join(pathlib.Path(__file__).parent.resolve(), "formats/")
 
     @staticmethod
-    def write_git_commit(files: list[str] | None = None) -> str:
+    def write_git_commit(
+        files: list[str] | None = None,
+        added_context: str | None = None
+    ) -> str:
         llama_chat = ChatOllama(model="llama3.1")
         messages = [
             SystemMessage(
@@ -29,7 +32,8 @@ class GitLlama:
                 str(diff)
                 for diff in Git.diffs()
                 if files is None or diff.new_file_name in files
-            ))
+            )),
+            *([HumanMessage(added_context)] if added_context else [])
         ]
         for message in messages:
             print(message.content)
