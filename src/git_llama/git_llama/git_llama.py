@@ -8,10 +8,8 @@ from git import Git
 from git_llama.prompts import COMMIT_PROMPT, FORMAT_EXPLAINED
 
 
-FORMAT_DIR = os.path.join(pathlib.Path(__file__).parent.resolve(), "formats/")
-
-
 class GitLlama:
+    FORMAT_DIR = os.path.join(pathlib.Path(__file__).parent.resolve(), "formats/")
 
     @staticmethod
     def write_git_commit(files: list[str] | None = None) -> str:
@@ -23,7 +21,7 @@ class GitLlama:
                 os.getenv(
                     'GIT_LLAMA_FORMAT_EXPLAINED',
                     FORMAT_EXPLAINED.format(
-                        format_explained=open(rf"{FORMAT_DIR}\conventional_format.md").read()
+                        format_explained=open(rf"{GitLlama.FORMAT_DIR}\conventional_format.md").read()
                     )
                 )
             ),
