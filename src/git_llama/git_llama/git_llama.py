@@ -35,9 +35,6 @@ class GitLlama:
             )),
             *([HumanMessage(added_context)] if added_context else [])
         ]
-        for message in messages:
-            print(message.content)
-            print("\n\n\n")
         response = llama_chat.invoke(messages)
         return response.content
 
