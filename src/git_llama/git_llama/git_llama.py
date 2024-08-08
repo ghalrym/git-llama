@@ -4,7 +4,7 @@ import pathlib
 from langchain_community.chat_models import ChatOllama
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from git import Git
+from git_llama.git import Git
 from .prompts import COMMIT_PROMPT, FORMAT_EXPLAINED
 
 

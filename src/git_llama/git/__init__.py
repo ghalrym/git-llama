@@ -1,2 +1,2 @@
-from git.git import Git
-from git.models import GitDiff, GitBranch, GitLog
+from .git import Git
+from .models import GitDiff, GitBranch, GitLog

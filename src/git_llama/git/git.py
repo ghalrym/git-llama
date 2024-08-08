@@ -1,7 +1,7 @@
 import re
 import subprocess
 
-from git.models import GitDiff, GitBranch, GitLog
+from .models import GitDiff, GitBranch, GitLog
 
 CLEAN_GIT_BRANCH = re.compile("(\s*\*\s*)|(\s*remotes/origin/\s*)")
 
