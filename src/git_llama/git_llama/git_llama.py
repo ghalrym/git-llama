@@ -5,7 +5,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from git import Git
-from git_llama.prompts import COMMIT_PROMPT, FORMAT_EXPLAINED
+from .prompts import COMMIT_PROMPT, FORMAT_EXPLAINED
 
 
 class GitLlama:

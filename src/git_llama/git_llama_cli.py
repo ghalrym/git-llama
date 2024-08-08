@@ -2,7 +2,7 @@ from typing import Optional
 
 from typer import Typer
 
-from git_llama.git_llama import GitLlama
+from git_llama import GitLlama
 
 app = Typer()
 
